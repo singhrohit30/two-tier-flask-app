@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Two Tier Application with Flask and MYSQL!</h1>
+        {% for message in messages %}
+        <p>{{loop.index}}{{' '}}{{message[0] }}</p>
+        {% endfor %}
+
+        <form action="/submit" method="post">
+            <input type="text" name="new_message" placeholder="Enter a new message">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+
+</html>
